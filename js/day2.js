@@ -34,5 +34,7 @@ const test5 = (my_string, overwrite_string, s) => {
     const head = my_string.substring(s, overwrite_string);
     const tail = my_string.substring(s+overwrite_string.length, my_string.length);
     return head+overwrite_string+tail;
+
+    // slice
+    return my_string.slice(0, s) + overwrite_string + my_string.slice(s + overwrite_string.length);
 }
-test5("He11oWor1d", "lloWorl", 2);
