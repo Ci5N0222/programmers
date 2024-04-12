@@ -77,3 +77,28 @@ console.log(str); // "apple,banana,orange"
 const arr = ["apple", "banana", "orange"];
 const str = arr.join(" "); // 구분자 ' ' (공백)을 사용하여 배열의 요소를 결합하여 문자열 생성
 console.log(str); // "apple banana orange"
+
+
+/** reduce() **/
+// 배열의 각 요소에 대해 주어진 콜백 함수를 실행하고 하나의 결과값을 반환
+// 배열을 하나의 값으로 줄이는 데 사용
+// 주로 배열의 모든 요소를 합산하거나 평균을 구하는 등의 작업에 활용
+// arr.reduce(callback(accumulator, currentValue[, index[, array]])[, initialValue])
+// callback: 각 요소에 대해 실행할 함수로, 네 가지 매개변수를 받습니다.
+// accumulator: 누산기로서 콜백 함수의 반환값을 누적합니다. 초기값으로 설정된 경우, 이는 이전 콜백 호출의 반환값이고, 아닌 경우, 배열의 첫 번째 요소입니다.
+// currentValue: 현재 처리 중인 요소입니다.
+
+// index (선택사항): 배열 내 현재 처리 중인 요소의 인덱스입니다.
+// array (선택사항): reduce()가 호출된 배열입니다.
+// initialValue (선택사항): 콜백 함수의 첫 번째 호출에서 accumulator의 초기값으로 사용되는 값입니다. 생략되면 배열의 첫 번째 요소가 accumulator의 초기값으로 사용됩니다.
+// reduce() 메서드의 작동 과정은 다음과 같습니다:
+
+// accumulator에 초기값이 제공되지 않은 경우, 배열의 첫 번째 요소가 초기값으로 사용됩니다. 그렇지 않으면, 초기값은 제공된 값입니다.
+// 배열의 각 요소마다 callback 함수가 실행됩니다.
+// callback 함수에서 반환된 값은 accumulator에 누적됩니다.
+// 마지막 배열 요소가 처리되면, reduce() 메서드는 누적된 결과를 반환합니다.
+
+const numbers = [1, 2, 3, 4, 5];
+const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+console.log(sum); // 출력: 15 (1 + 2 + 3 + 4 + 5)
+// 이 예제에서는 초기값으로 0을 설정하여 배열의 모든 요소를 합산하고 있습니다.
