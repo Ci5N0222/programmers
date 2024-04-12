@@ -50,3 +50,30 @@ console.log(str.slice(7, 12));  // "world"
 console.log(str.slice(-6));     // "world!"
 console.log(str.slice(-6, -1)); // "world"
 
+
+/** split() **/
+// 문자열을 지정된 구분자를 기준으로 나누어 배열로 변환하는 JavaScript 문자열 메서드
+string.split(separator, limit)
+// separator: 필수 매개변수로, 문자열을 나눌 때 사용할 구분자.
+// 이 구분자는 문자열 내에서 찾아진 첫 번째 구분자를 문자열로 나눈다. 
+// 매개변수를 생략하면 문자열 전체가 하나의 요소로 포함된 배열이 반환
+
+// limit: 선택적 매개변수로, 반환할 배열의 최대 길이를 나타낸다.
+// 이 매개변수를 생략하면 문자열 전체를 기준으로 배열이 생성됨.
+const str1 = "apple,banana,orange";
+const arr1 = str.split(","); // 구분자 ','를 기준으로 문자열을 나누어 배열 생성
+console.log(arr); // ["apple", "banana", "orange"]
+
+
+/** join() **/
+// 배열의 모든 요소를 하나의 문자열로 결합하는 JavaScript의 배열 메서드
+// 배열의 각 요소를 문자열로 반환한 후, 지정된 구분자를 이용하여 하나의 문자열로 합칩니다.
+array.join(separator)
+// separator: 선택적 매개변수로, 배열의 요소를 결합할 때 사용할 구분자
+// 이 구분자는 각 요소 사이에 삽입. 이 매개변수를 생략하면 기본적으로 쉼표가 사용됨
+const arr2 = ["apple", "banana", "orange"];
+const str2 = arr.join(","); // 구분자 ','를 사용하여 배열의 요소를 결합하여 문자열 생성
+console.log(str); // "apple,banana,orange"
+const arr = ["apple", "banana", "orange"];
+const str = arr.join(" "); // 구분자 ' ' (공백)을 사용하여 배열의 요소를 결합하여 문자열 생성
+console.log(str); // "apple banana orange"
