@@ -102,3 +102,18 @@ const numbers = [1, 2, 3, 4, 5];
 const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 console.log(sum); // 출력: 15 (1 + 2 + 3 + 4 + 5)
 // 이 예제에서는 초기값으로 0을 설정하여 배열의 모든 요소를 합산하고 있습니다.
+
+
+/** concat() **/
+// 배열의 끝에 하나 이상의 배열 또는 값들을 추가하여 새로운 배열을 만들며, 원본 배열은 변경되지 않는다.
+const newArray = arr.concat(value1, value2, valueN);
+// arr: 기존 배열
+// value1, value2, valueN: 추가할 값이나 배열
+// concat() 메서드는 'arr' 배열 뒤에 각 'value'를 순서대로 추가한 새로운 배열을 반환
+// value 가 배열이면 해당 배열의 요소들이 추가된다.
+const arr11 = [1, 2, 3];
+const arr22 = [4, 5];
+const arr3 = arr11.concat(arr22);
+console.log(arr3); // [1, 2, 3, 4, 5]
+// 위의 예제에서 arr1과 arr2 배열을 concat() 메서드로 합치면 새로운 배열 arr3이 생성되고, 
+// arr1과 arr2의 모든 요소가 arr3로 복사됩니다.
