@@ -1,7 +1,7 @@
 // 정수 배열 array와 정수 n이 매개변수로 주어질 때, 
 // array에 들어있는 정수 중 n과 가장 가까운 수를 return 하도록 solution 함수를 완성해주세요.
-const test1 = (array, n ) => {
-    let minDiff = Math.abs(n - array[0]); 
+const test1 = (array, n) => {
+    let minDiff = Math.abs(n - array[0]);
     let closestNumbers = [array[0]];
 
     for (let i = 1; i < array.length; i++) {
@@ -39,4 +39,27 @@ const test2 = (str_list) => {
 
 
 // 이차원 정수 배열 arr이 매개변수로 주어집니다. 
-// arr의 행의 수가 더 많다면 열의 수가 행의 수와 같아지도록 각 행의 끝에 0을 추가하고, 열의 수가 더 많다면 행의 수가 열의 수와 같아지도록 각 열의 끝에 0을 추가한 이차원 배열을 return 하는 solution 함수를 작성해 주세요.
+// arr의 행의 수가 더 많다면 열의 수가 행의 수와 같아지도록 각 행의 끝에 0을 추가하고, 
+// 열의 수가 더 많다면 행의 수가 열의 수와 같아지도록 각 열의 끝에 0을 추가한 이차원 배열을 return 하는 solution 함수를 작성해 주세요.
+const test3 = (arr) => {
+    let answer = [...arr];
+    let rows = arr.length;
+    let cols = arr[1].length;
+    if (cols > rows) {
+        for (let i = 0; i < cols - rows; i++) {
+            let arr = [];
+            for (let j = 0; j < cols; j++) {
+                arr.push(0);
+            }
+            answer.push(arr);
+        }
+        return answer;
+    } else if (rows > cols) {
+        for (let i = 0; i < rows; i++) {
+            for (let j = 0; j < rows - cols; j++) {
+                answer[i].push(0);
+            }
+        }
+    }
+    return answer;
+}
