@@ -35,5 +35,3 @@ const test2 = (n) => {
     
     return answer;
 }
-
-test2()
