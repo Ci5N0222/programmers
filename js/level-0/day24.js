@@ -27,7 +27,6 @@ const test2 = (n) => {
 const test3 = (age) => {
     const str = ['a', 'b', 'c', 'd', 'e','f', 'g', 'h', 'i', 'j'];
     return age.toString().split('').map(item => {
-        console.log(item);
         return str[item];
     }).join('');
 }
